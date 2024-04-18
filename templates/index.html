@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Similarity Checker</title>
+</head>
+<body>
+    <h1>Text Similarity Checker</h1>
+    <form id="textForm" action="/" method="post">
+        <label for="text1">Text 1:</label><br>
+        <textarea id="text1" name="text1" rows="4" cols="50"></textarea><br><br>
+        <label for="text2">Text 2:</label><br>
+        <textarea id="text2" name="text2" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Check Similarity">
+    </form>
+
+    {% if similarity_score is defined %}
+        <h2>Similarity Score: {{ similarity_score }}</h2>
+        <p>This is the similarity score calculated between the two input texts.</p>
+        <a href="/">Go back to input</a>
+    {% endif %}
+</body>
+</html>
